@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lmsweb
+  labels:
+    app: lmsweb
+    tier: front-end
+spec:
+  containers:
+  - name: lmsweb
+    image: kunohdere/lms-web:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80 
