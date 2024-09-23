@@ -15,3 +15,9 @@ spec:
         cpu: "500m"
     ports:
       - containerPort: 80 
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 5
