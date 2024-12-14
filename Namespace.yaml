@@ -2,5 +2,11 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: lms-beta
+  labels:
+    app: lms
+    environment: dev
   annotations:
     monitoring: "enabled"
+    logging: "enabled"
+    owner: "devops"
+    purpose: "Library Management System Deta testing"
