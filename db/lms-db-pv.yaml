@@ -2,12 +2,12 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: lms-db-pv
-  namaspace: lms-beta
+  namespace: lms-beta
   labels:
     type: local
     app: lms-postgres-persitent-volume
 spec:
-  storageClassName: standard
+  storageClassName: manual
   capacity:
     storage: "5Gi"
   volumeMode: Filesystem

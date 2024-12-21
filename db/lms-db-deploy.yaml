@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: lms-db-deploy
-  namaspace: lms-beta
+  namespace: lms-beta
   labels:
     app: lms-db-deployment
     tier: dbend
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: lms-db
@@ -28,12 +28,12 @@ spec:
               cpu: "200m"
           ports:
             - containerPort: 5432
-          volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgresdata
           envFrom:
             - configMapRef:
                 name: lms-dbconfig
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresdata
           livenessProbe:
             exec:
               command:
