@@ -20,5 +20,18 @@ spec:
       containers:
       - name: lms-web
         image: kunohdere/lms-web:1.0.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10

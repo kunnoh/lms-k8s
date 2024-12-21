@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: lms-db-deploy
-  namaspace: lms
+  namaspace: lms-beta
   labels:
     app: lms-db-deployment
-    tier: db
+    tier: dbend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: lms-db
-      tier: db
+      tier: dbend
   template:
     metadata:
       labels:
         app: lms-db
-        tier: db
+        tier: dbend
     spec:
       containers:
         - name: lms-postgres-container
@@ -34,14 +34,13 @@ spec:
           envFrom:
             - configMapRef:
                 name: lms-dbconfig
-
           livenessProbe:
             exec:
               command:
                 - pg_isready
                 - -U
                 - postgres
-            initialDelaySeconds: 30
+            initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 5
             failureThreshold: 3
@@ -53,9 +52,8 @@ spec:
                 - postgres
             initialDelaySeconds: 5
             periodSeconds: 10
-            timeoutSeconds: 3
+            timeoutSeconds: 5
             failureThreshold: 3
-
       volumes:
         - name: postgresdata
           persistentVolumeClaim:
