@@ -3,7 +3,7 @@ kind: Namespace
 metadata:
   name: lms-beta
   labels:
-    app: lms
+    app: lms-sys-beta
     environment: dev
   annotations:
     monitoring: "enabled"

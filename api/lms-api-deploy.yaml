@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: lms-api-deploy
-  namaspace: lms
+  namaspace: lms-beta
   labels:
     app: lms-api-deployment
     tier: backend
@@ -21,29 +21,24 @@ spec:
       containers:
         - name: lms-api-container
           image: kunohdere/lms-api:latest
-
           ports:
             - containerPort: 5521
-
           resources:
             requests:
-              memory: "128Mi"
+              memory: "64Mi"
               cpu: "100m"
             limits:
-              memory: "196Mi"
+              memory: "128Mi"
               cpu: "300m"
-
           envFrom:
             - configMapRef:
                 name: lms-api-config
-
           livenessProbe:
             httpGet:
               path: /health
               port: 5521
             initialDelaySeconds: 5
             periodSeconds: 10
-
           readinessProbe:
             httpGet:
               path: /ready
