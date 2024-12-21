@@ -32,8 +32,10 @@ spec:
             - configMapRef:
                 name: lms-dbconfig
           volumeMounts:
-            - mountPath: /var/lib/postgresql/data
-              name: postgresdata
+            - name: postgresdata
+              mountPath: /var/lib/postgresql/data
+            - name: psqlsecret
+              mountPath: /secrets
           livenessProbe:
             exec:
               command:
@@ -58,3 +60,6 @@ spec:
         - name: postgresdata
           persistentVolumeClaim:
             claimName: lms-db-claim
+        - name: psqlsecret
+          secret:
+            secretName: psql-secret-data

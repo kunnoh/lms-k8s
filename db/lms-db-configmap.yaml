@@ -7,6 +7,4 @@ metadata:
     name: lms-db-dbconfig
     tier: dbend
 data:
-  POSTGRES_USER: postgres
-  POSTGRES_PASSWORD: postgres
   POSTGRES_DB: test
