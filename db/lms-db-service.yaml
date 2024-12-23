@@ -2,13 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   name: lms-db-service
-  namaspace: lms
+  namespace: lms-beta
   labels:
-    app: lms-postgres-service
+    app: lms-db-service
 spec:
   type: ClusterIP
   selector:
     app: lms-db
   ports:
-    - port: 9911
+    - protocol: TCP
+      port: 9911
       targetPort: 5432

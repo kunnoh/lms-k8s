@@ -6,6 +6,7 @@ metadata:
   labels:
     app: lms-web-app-service
 spec:
+  type: NodePort
   selector:
     app: lms-web
   ports:
