@@ -26,19 +26,24 @@ spec:
         resources:
           requests:
             memory: "128Mi"
-            cpu: "250m"
+            cpu: "100m"
           limits:
-            memory: "512Mi"
-            cpu: "500m"
-        readinessProbe:
+            memory: "254Mi"
+            cpu: "200m"
+        startupProbe:
           httpGet:
             path: /
             port: 80
           initialDelaySeconds: 10
-          periodSeconds: 10
+          periodSeconds: 30
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          periodSeconds: 5
         livenessProbe:
           httpGet:
             path: /
             port: 80
-          initialDelaySeconds: 15
           periodSeconds: 20
