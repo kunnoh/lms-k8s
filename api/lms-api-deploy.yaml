@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: lms-api-deploy
-  namaspace: lms-beta
+  namespace: lms-beta
   labels:
     app: lms-api-deployment
     tier: backend
@@ -34,15 +34,17 @@ spec:
           envFrom:
             - configMapRef:
                 name: lms-api-config
+            - secretRef:
+                name: lms-api-secrets
           livenessProbe:
             httpGet:
               path: /health
               port: 5521
-            initialDelaySeconds: 5
+            initialDelaySeconds: 25
             periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /ready
               port: 5521
-            initialDelaySeconds: 5
+            initialDelaySeconds: 35
             periodSeconds: 5
