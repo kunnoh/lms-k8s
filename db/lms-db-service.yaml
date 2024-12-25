@@ -9,7 +9,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: lms-db
+    app: lms-db-psql
   ports:
     - protocol: TCP
       port: 9911
