@@ -6,12 +6,14 @@ metadata:
   labels:
     app: lms-api-deployment
     tier: backend
+    env: test
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: lms-api-app
       tier: backend
+      env: test
   template:
     metadata:
       labels:
