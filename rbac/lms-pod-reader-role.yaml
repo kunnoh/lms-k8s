@@ -3,6 +3,7 @@ kind: Role
 metadata:
   namespace: lms-beta
   name: pod-reader
+  env: test
 rules:
 - apiGroups: [""] # core API group
   resources: ["pods"]

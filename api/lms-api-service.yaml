@@ -5,6 +5,7 @@ metadata:
   namespace: lms-beta
   labels:
     app: lms-api-app-service
+    env: test
 spec:
   type: NodePort
   selector:

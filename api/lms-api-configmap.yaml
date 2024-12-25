@@ -6,6 +6,7 @@ metadata:
   labels:
     name: lms-api-config
     tier: env
+    env: test
 data:
   DB_HOST: lms-db-service
   DB_PORT: "9911"

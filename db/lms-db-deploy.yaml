@@ -12,6 +12,7 @@ spec:
     matchLabels:
       app: lms-db
       tier: dbend
+      env: test
   template:
     metadata:
       labels:

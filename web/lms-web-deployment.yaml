@@ -6,6 +6,7 @@ metadata:
   labels:
     app: lms-web-deployment
     tier: frontend
+    env: test
 spec:
   replicas: 2
   selector:
@@ -41,7 +42,7 @@ spec:
           httpGet:
             path: /
             port: 80
-          periodSeconds: 5
+          periodSeconds: 15
         livenessProbe:
           httpGet:
             path: /

@@ -6,5 +6,6 @@ metadata:
   labels:
     name: lms-db-dbconfig
     tier: dbend
+    env: test
 data:
   POSTGRES_DB: test

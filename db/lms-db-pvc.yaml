@@ -5,6 +5,7 @@ metadata:
   namespace: lms-beta
   labels:
     app: postgres-persistent-volume-claim
+    env: test
 spec:
   storageClassName: manual
   accessModes:

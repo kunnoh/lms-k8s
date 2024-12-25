@@ -6,6 +6,7 @@ metadata:
   labels:
     type: local
     app: lms-postgres-persitent-volume
+    env: test
 spec:
   storageClassName: manual
   capacity:

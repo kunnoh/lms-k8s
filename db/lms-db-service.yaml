@@ -5,6 +5,7 @@ metadata:
   namespace: lms-beta
   labels:
     app: lms-db-service
+    env: test
 spec:
   type: ClusterIP
   selector:

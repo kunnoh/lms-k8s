@@ -5,6 +5,7 @@ metadata:
   namespace: lms-beta
   labels:
     app: lms-db-postgres
+    env: test
 spec:
   selector:
     matchLabels:

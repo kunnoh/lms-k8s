@@ -17,6 +17,7 @@ spec:
       labels:
         app: lms-api-app
         tier: backend
+        env: test
     spec:
       containers:
         - name: lms-api-container

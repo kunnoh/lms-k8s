@@ -3,6 +3,7 @@ kind: RoleBinding
 metadata:
   name: lms-role-binding
   namespace: lms-beta
+  env: test
 subjects:
 - kind: User
   name: kunnoh # case sensiive
