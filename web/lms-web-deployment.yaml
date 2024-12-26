@@ -18,6 +18,7 @@ spec:
         app: lms-web
         tier: frontend
     spec:
+      terminationGracePeriodSeconds: 5
       containers:
       - name: lms-web
         image: kunohdere/lms-web:1.0.0

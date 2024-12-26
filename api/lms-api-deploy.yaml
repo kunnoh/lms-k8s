@@ -21,6 +21,7 @@ spec:
         tier: backend
         env: test
     spec:
+      terminationGracePeriodSeconds: 5
       containers:
         - name: lms-api-container
           image: kunohdere/lms-api:latest

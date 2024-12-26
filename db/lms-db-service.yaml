@@ -10,6 +10,7 @@ spec:
   type: ClusterIP
   selector:
     app: lms-db-psql
+    env: test
   ports:
     - protocol: TCP
       port: 9911

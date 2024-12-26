@@ -20,13 +20,13 @@ spec:
         app: lms-db-psql
         env: test
     spec:
-      terminationGracePeriodSeconds: 20
+      terminationGracePeriodSeconds: 10
       containers:
-      - name: lms-db-psql
+      - name: lms-db-psql-container
         image: postgres:17-alpine
         imagePullPolicy: IfNotPresent
         ports:
-        - name: postgres
+        - name: lms-postgres
           containerPort: 5432
         envFrom:
         - configMapRef:
