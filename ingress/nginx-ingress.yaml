@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress
+  namespace: lms-beta
+  labels:
+    name: nginx-ingress
+spec:
+  rules:
+  - host: lms.kun
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/api"
+        backend:
+          service:
+            name: lms-api-service
+            port: 
+              number: 30090
