@@ -25,6 +25,7 @@ spec:
       containers:
         - name: lms-api-container
           image: kunohdere/lms-api:latest
+          # imagePullPolicy: IfNotPresent
           imagePullPolicy: Always
           ports:
             - containerPort: 5521
@@ -44,11 +45,9 @@ spec:
             httpGet:
               path: /health
               port: 5521
-            initialDelaySeconds: 25
             periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /ready
               port: 5521
-            initialDelaySeconds: 35
             periodSeconds: 5
