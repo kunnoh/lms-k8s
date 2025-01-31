@@ -25,7 +25,6 @@ spec:
       containers:
         - name: lms-api-container
           image: kunohdere/lms-api:latest
-          # imagePullPolicy: IfNotPresent
           imagePullPolicy: Always
           ports:
             - containerPort: 5521
