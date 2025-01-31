@@ -4,7 +4,7 @@ metadata:
   name: lms-dbconfig
   namespace: lms-beta
   labels:
-    name: lms-db-dbconfig
+    name: lms-db-config
     tier: dbend
     env: test
 data:

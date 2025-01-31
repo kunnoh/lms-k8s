@@ -8,6 +8,7 @@ metadata:
     env: test
 spec:
   type: ClusterIP
+  ClusterIP: None
   selector:
     app: lms-db-psql
     env: test

@@ -6,6 +6,7 @@ metadata:
   labels:
     app: lms-db-postgres
     env: test
+    tier: dbend
 spec:
   selector:
     matchLabels:
